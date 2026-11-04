@@ -57,5 +57,14 @@ class PetsController {
             return false;
         }
     }
+    public function delete($id)
+    {
+        $sql = "DELETE FROM pets WHERE id=" . $id . ";";
+        if ($this->conn->query($sql) === TRUE) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 
 }
