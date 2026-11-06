@@ -17,3 +17,5 @@ class Pet {
         $this->picture = $picture;
     }
 }
+
+?>
