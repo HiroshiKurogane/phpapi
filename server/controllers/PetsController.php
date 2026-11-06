@@ -36,6 +36,22 @@ class PetsController {
         }
         return $pets;
     }
+    public function getAllByType($type)
+    {
+        $typesql = "SELECT id FROM pet_types WHERE name = '" . $type . "';";
+        $typeid = $this->conn->query($typesql);
+
+        $sql = "SELECT name, age, picture FROM pets WHERE typeid = " . $typeid->fetch_assoc()['id'] . ";";
+        $result = $this->conn->query($sql);
+        $pets = [];
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                $pet = new PetLowInfo($row["name"], $row["age"], $row["picture"]);
+                array_push($pets, $pet);
+            }
+        }
+        return $pets;
+    }
     public function create($name, $cuteness, $age, $typeid, $picture = "")
     {
         $sql = "INSERT INTO pets (name, cuteness, age, typeid, picture) 

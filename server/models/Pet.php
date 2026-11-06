@@ -18,4 +18,16 @@ class Pet {
     }
 }
 
+class PetLowInfo {
+    public $name;
+    public $age;
+    public $picture;
+
+    public function __construct($name, $age, $picture) {
+        $this->name = $name;
+        $this->age = $age;
+        $this->picture = $picture;
+    }
+}   
+
 ?>
