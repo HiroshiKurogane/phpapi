@@ -16,7 +16,7 @@
 
 
 -- Adatbázis struktúra mentése a petsdb.
-CREATE DATABASE IF NOT EXISTS `petsdb` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+CREATE DATABASE IF NOT EXISTS `petsdb` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
 USE `petsdb`;
 
 -- Struktúra mentése tábla petsdb. pets
@@ -30,7 +30,7 @@ CREATE TABLE IF NOT EXISTS `pets` (
   PRIMARY KEY (`id`),
   KEY `FK_pets_pet_types` (`typeid`),
   CONSTRAINT `FK_pets_pet_types` FOREIGN KEY (`typeid`) REFERENCES `pet_types` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Tábla adatainak mentése petsdb.pets: ~3 rows (hozzávetőleg)
 INSERT INTO `pets` (`id`, `cuteness`, `name`, `picture`, `typeid`, `age`) VALUES
@@ -41,9 +41,9 @@ INSERT INTO `pets` (`id`, `cuteness`, `name`, `picture`, `typeid`, `age`) VALUES
 -- Struktúra mentése tábla petsdb. pet_types
 CREATE TABLE IF NOT EXISTS `pet_types` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `name` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `name` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Tábla adatainak mentése petsdb.pet_types: ~6 rows (hozzávetőleg)
 INSERT INTO `pet_types` (`id`, `name`) VALUES
