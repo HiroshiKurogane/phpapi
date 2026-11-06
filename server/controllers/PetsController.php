@@ -1,5 +1,6 @@
-<?
+<?php
 include_once __DIR__ . '/../db/conn.php';
+include_once __DIR__ . '/../models/Pet.php';
 class PetsController {
     public $conn;
     public function __construct() {

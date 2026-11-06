@@ -1,8 +1,8 @@
 <?php
-include_once("../controllers/PetsController.php");
+include_once __DIR__ . '/../controllers/PetsController.php';
 header('Content-Type: application/json; charset=utf-8');
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if ($_SERVER["REQUEST_METHOD"] == "PUT") {
     $petsController = new PetsController();
     $request = json_decode(file_get_contents('php://input'), true);
 
